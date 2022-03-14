@@ -3,3 +3,6 @@
 # 인텔리제이에서 자동으로 생성되는 파일 모두 이그노어 처리
 .gradle
 .idea
+
+# 보안을 위해 커밋 방지
+application-oauth.properties
