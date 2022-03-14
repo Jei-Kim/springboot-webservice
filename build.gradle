@@ -33,12 +33,14 @@ dependencies {
     implementation('com.h2database:h2')
 
     implementation('org.springframework.boot:spring-boot-starter-mustache')
-/*
+
+    // 소셜 기능 구현 시 필요
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+
     implementation('org.springframework.session:spring-session-jdbc')
 
     implementation("org.mariadb.jdbc:mariadb-java-client")
-*/
+
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     testAnnotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.projectlombok:lombok'
