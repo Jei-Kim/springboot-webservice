@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.web;
 
 
+import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
@@ -17,18 +18,20 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
 
-    /* 머스테치 스타터로 인해 앞의 경로와 뒤의 파일 확장자는 자동으로 지정됨
+    /*
+    머스테치 스타터로 인해 앞의 경로와 뒤의 파일 확장자는 자동으로 지정됨
         - src/main/resources/templates/index.mustache
         - 뷰 리졸버가 처리
      */
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
+        // 기존에 getAttribute로 가져오던 세션정보값이 개선됨 - 어느 컨트롤러든지 @LoginUser로 정보 불러오기 가능
+
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
         if(user != null) {
             model.addAttribute("userName", user.getName());
         }
