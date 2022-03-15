@@ -37,6 +37,7 @@ dependencies {
     // 소셜 기능 구현 시 필요
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
 
+    // 세션 저장소로 데이터베이스 사용
     implementation('org.springframework.session:spring-session-jdbc')
 
     implementation("org.mariadb.jdbc:mariadb-java-client")
@@ -44,5 +45,6 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     testAnnotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.projectlombok:lombok'
-    //testImplementation("org.springframework.security:spring-security-test")
+
+    testImplementation("org.springframework.security:spring-security-test")
 }
