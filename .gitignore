@@ -6,3 +6,5 @@
 
 # 보안을 위해 커밋 방지
 application-oauth.properties
+
+build

@@ -14,7 +14,7 @@ public class PostsApiController {
     private final PostsService postsService;
 
     @PostMapping("/api/v1/posts")
-    public long sava(@RequestBody PostsSaveRequestDto requestDto) {
+    public long save(@RequestBody PostsSaveRequestDto requestDto) {
         return postsService.save(requestDto);
     }
 
